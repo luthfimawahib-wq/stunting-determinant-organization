@@ -10,7 +10,7 @@ Machine learning is used here as a **measurement instrument**, not as a predicto
 Models are fitted to quantify how attribution is distributed among determinants; their
 discrimination is reported as context for measurement quality, not as a finding.
 
-> **DOI:** `10.5281/zenodo.XXXXXXX`
+> **DOI:** `10.5281/zenodo.22039068`
 
 ## Data availability
 
