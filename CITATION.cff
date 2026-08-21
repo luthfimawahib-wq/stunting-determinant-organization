@@ -1,0 +1,37 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata below."
+title: "Stunting Determinant Organization Across Developmental Stages"
+abstract: >-
+  Analysis code for measuring how the attribution structure of stunting
+  determinants differs between two developmental stages, using three Indonesian
+  national surveys. Five phases: measurement, domain dictionary, attribution
+  shares, interpretation, and robustness.
+type: software
+authors:
+  - family-names: Fimawahib
+    given-names: Luth
+    orcid: "https://orcid.org/0000-0002-4271-7347"
+    affiliation: "Universitas Negeri Yogyakarta"
+  - family-names: Arifin
+    given-names: Fatchul
+    orcid: "https://orcid.org/0000-0002-5182-1269"
+    affiliation: "Universitas Negeri Yogyakarta"
+  - family-names: Marpanaji
+    given-names: Eko
+    orcid: "https://orcid.org/0009-0001-6613-4920"
+    affiliation: "Universitas Negeri Yogyakarta"
+  - family-names: Rahmaddian
+    given-names: Tosi
+    orcid: "https://orcid.org/0000-0002-6632-8426"
+    affiliation: "Baiturrahmah University"
+license: MIT
+repository-code: "https://github.com/luthfimawahib-wq/stunting-determinant-organization"
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.XXXXXXX
+keywords:
+  - growth disorders
+  - social determinants of health
+  - machine learning
+  - Shapley additive explanations
+  - Indonesia

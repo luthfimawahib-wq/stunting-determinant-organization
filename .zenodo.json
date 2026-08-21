@@ -1,0 +1,36 @@
+{
+  "title": "Stunting Determinant Organization Across Developmental Stages",
+  "description": "Analysis code for measuring how the attribution structure of stunting determinants differs between two developmental stages, using three Indonesian national surveys.",
+  "upload_type": "software",
+  "license": "mit",
+  "creators": [
+    {
+      "name": "Fimawahib, Luth",
+      "orcid": "0000-0002-4271-7347",
+      "affiliation": "Universitas Negeri Yogyakarta"
+    },
+    {
+      "name": "Arifin, Fatchul",
+      "orcid": "0000-0002-5182-1269",
+      "affiliation": "Universitas Negeri Yogyakarta"
+    },
+    {
+      "name": "Marpanaji, Eko",
+      "orcid": "0009-0001-6613-4920",
+      "affiliation": "Universitas Negeri Yogyakarta"
+    },
+    {
+      "name": "Rahmaddian, Tosi",
+      "orcid": "0000-0002-6632-8426",
+      "affiliation": "Baiturrahmah University"
+    }
+  ],
+  "keywords": [
+    "growth disorders",
+    "social determinants of health",
+    "machine learning",
+    "Shapley additive explanations",
+    "Indonesia"
+  ],
+  "access_right": "open"
+}
