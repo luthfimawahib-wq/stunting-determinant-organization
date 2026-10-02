@@ -1,3 +1,5 @@
+# Python 3.10.4
+# Version floors, not pins. The published results were produced with the versions
 pandas>=2.0
 numpy>=1.24
 pyarrow>=12.0
