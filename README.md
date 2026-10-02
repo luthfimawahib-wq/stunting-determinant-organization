@@ -1,16 +1,18 @@
-# Stunting Determinant Organization Across Developmental Stages
+# Composition of Attributed Risk in Stunting Across Developmental Stages
 
-Analysis code for a study of how the **attribution structure** of stunting determinants
+Analysis code for a study of how the **composition of attributed risk** in stunting
 differs between two developmental stages, using three Indonesian national surveys
 (SSGI 2022, SSGI 2024, SKI 2023). The question is not which determinants cause
 stunting, but whether the relative weight carried by groups of determinants is the same
-throughout early childhood.
+throughout early childhood. The published article calls this quantity the composition of
+attributed risk; earlier versions of this repository called it the attribution structure.
+The measured quantity is the same in both.
 
 Machine learning is used here as a **measurement instrument**, not as a predictor.
 Models are fitted to quantify how attribution is distributed among determinants; their
 discrimination is reported as context for measurement quality, not as a finding.
 
-> **DOI:** `10.5281/zenodo.22039068`
+> **DOI:** [`10.5281/zenodo.22039068`](https://doi.org/10.5281/zenodo.22039068)
 
 ## Data availability
 
@@ -92,7 +94,7 @@ python data_uji/buat_data_uji.py
 The chain below then runs end to end and takes a few minutes.
 
 ```bash
-python phase1_runner.py              # twelve measurement units (set parquet_path first)
+python phase1_runner.py              # twelve measurement units
 python phase2_runner.py              # domain dictionary and comparability
 python phase3_runner.py              # attribution shares and decomposition
 python phase4_runner.py              # hypotheses and evidence tiers
@@ -151,6 +153,48 @@ compared quantity is the same.
   never on oversampled ones.
 - Model hyperparameters are fixed a priori and identical across all cells, because the
   objective is comparability of measurement, not predictive optimization.
+
+## Model settings
+
+Hyperparameters are fixed a priori and identical across all twelve measurement units,
+because the objective is comparability of measurement rather than predictive
+optimization. They are defined in `phase1_measure.py`; the `CONFIG` block of
+`phase1_runner.py` carries paths, cell lists, and sample sizes only.
+
+| Setting | Value |
+|---|---|
+| XGBoost | n_estimators 400, max_depth 5, learning_rate 0.05, subsample 0.8, colsample_bytree 0.8, lambda 1.0, alpha 0.0, gamma 0.0, objective binary:logistic |
+| Random forest | n_estimators 600, max_depth None, min_samples_leaf 20, max_features sqrt |
+| Cross-validation | five folds, StratifiedGroupKFold stratified on the outcome and grouped by `id_ruta`, falling back to GroupKFold |
+| Class balancing | SMOTE inside training folds only, k_neighbors min(5, minority - 1), applied when the minority class exceeds five rows |
+| SHAP sample | up to 40 000 rows per cell (`matrix_sample`); the smallest cell uses all 30 333 |
+| Random seed | 42 throughout cross-validation, SMOTE, and sampling |
+| Python | 3.10.4 |
+
+AUC and average precision are computed per fold and stored with each unit. They describe
+measurement quality and are not a finding of the study.
+
+## Relation to the published article
+
+The article reports the same measurements under a different frame. Phase 4 here evaluates
+three hypotheses stated before the analysis and sorts domains into evidence tiers. The
+article reports no hypothesis verdicts. It reports the measured cross-stage differences,
+the eight robustness analyses whose decision rules were fixed in advance, and how much
+evidential weight each finding can carry.
+
+Two consequences are worth stating plainly. H1 expected relative stability in the
+birth-related share, and the measurement shows the largest decrease of any domain. H3
+expected the maternal share to decrease at the older stage, and the measurement shows an
+increase of 1.5 share points whose sign is inconsistent across surveys; the article
+reports that domain as not supporting a claim. Both verdicts are in the Phase 4 output
+(`hypotheses.csv`) and neither is restated in the article, because the article argues
+from the measured differences and their robustness rather than from hypothesis verdicts.
+
+The vocabulary also differs. The evidence tiers used here (robust, directionally robust,
+boundary case, insufficient evidence, insufficient basis) describe how much weight a
+finding can bear. The class labels used in the article (stage-specific, transition,
+invariant) come from the three boundary methods of Phase 3 and serve only to organize the
+pattern; the article states that they are not the basis of any claim.
 
 ## License and citation
 
