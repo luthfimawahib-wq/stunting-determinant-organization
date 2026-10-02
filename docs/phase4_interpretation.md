@@ -1,5 +1,12 @@
 # Phase 4. Interpretation
 
+> **Note on the published article.** The article derived from this analysis does not use
+> the hypothesis frame documented below. It reports the measured cross-stage differences
+> and their robustness, and does not restate the verdicts on H1 to H3. The hypotheses and
+> their verdicts are kept here as the record of what was planned and what was found,
+> including the predictions that failed. See "Relation to the published article" in the
+> README.
+
 ## Purpose
 
 Phase 3 produces measured quantities: attribution shares by domain, their cross-stage
