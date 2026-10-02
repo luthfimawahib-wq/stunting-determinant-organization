@@ -1,6 +1,6 @@
 {
-  "title": "Stunting Determinant Organization Across Developmental Stages",
-  "description": "Analysis code for measuring how the attribution structure of stunting determinants differs between two developmental stages, using three Indonesian national surveys.",
+  "title": "Composition of Attributed Risk in Stunting Across Developmental Stages",
+  "description": "Analysis code for measuring how the composition of attributed risk in stunting differs between two developmental stages, using three Indonesian national surveys (SSGI 2022, SSGI 2024, SKI 2023). Domain attribution shares are computed from Shapley values and compared across stages. Machine learning is used as a measurement instrument rather than as a predictor.",
   "upload_type": "software",
   "license": "mit",
   "creators": [
