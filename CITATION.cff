@@ -1,11 +1,12 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it using the metadata below."
-title: "Stunting Determinant Organization Across Developmental Stages"
+title: "Composition of Attributed Risk in Stunting Across Developmental Stages"
 abstract: >-
-  Analysis code for measuring how the attribution structure of stunting
-  determinants differs between two developmental stages, using three Indonesian
-  national surveys. Five phases: measurement, domain dictionary, attribution
-  shares, interpretation, and robustness.
+  Analysis code for measuring how the composition of attributed risk in stunting
+  differs between two developmental stages, using three Indonesian national surveys
+  (SSGI 2022, SSGI 2024, SKI 2023). Domain attribution shares are computed from Shapley
+  values and compared across stages. Machine learning is used as a measurement
+  instrument rather than as a predictor.
 type: software
 authors:
   - family-names: Fimawahib
